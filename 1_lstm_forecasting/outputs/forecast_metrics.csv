@@ -1,0 +1,4 @@
+,MAE,RMSE,MAPE (%)
+Naive (last value),44.45,58.27,33.28
+Moving Average (1h),42.43,55.81,57.53
+LSTM (proposed),41.02,53.47,51.82

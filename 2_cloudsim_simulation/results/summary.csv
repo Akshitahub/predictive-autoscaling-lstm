@@ -1,0 +1,5 @@
+policy,vm_hours,avg_vms,cost_usd,avg_response_s,p95_response_s,sla_violation_pct,underprovisioned_steps_pct,avg_utilization_pct
+STATIC,596.00,6.00,29.80,15.06,15.21,0.00,0.00,36.01
+REACTIVE,373.30,3.76,18.66,17.81,17.89,1.49,3.61,58.42
+PREDICTIVE_MA,353.00,3.55,17.65,17.29,15.21,1.53,1.76,61.01
+PREDICTIVE_LSTM,351.80,3.54,17.59,16.67,15.21,0.90,1.01,61.34
