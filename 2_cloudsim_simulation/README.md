@@ -73,4 +73,4 @@ A lower margin is cheaper but gives more SLA violations.
 | Static | 596.0 | 0.00% | 0.00% |
 | Reactive | 373.3 | 1.49% | 3.61% |
 | Predictive (MA) | 353.0 | 1.53% | 1.76% |
-| Predictive (LSTM) | 351.8 | 0.90% | 1.01% |
+| Predictive (LSTM) | 352.1 | 0.79% | 1.34% |

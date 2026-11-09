@@ -24,9 +24,9 @@ CloudSim Plus simulation on the test period (1192 intervals of 5 minutes, around
 | Static (sized for peak) | 596.0 | 29.80 | 15.06 | 0.00% | 0.00% |
 | Reactive (threshold 80/40%) | 373.3 | 18.66 | 17.81 | 1.49% | 3.61% |
 | Predictive (Moving Average) | 353.0 | 17.65 | 17.29 | 1.53% | 1.76% |
-| Predictive (LSTM) | 351.8 | 17.59 | 16.67 | 0.90% | 1.01% |
+| Predictive (LSTM) | 352.1 | 17.60 | 16.15 | 0.79% | 1.34% |
 
-Compared to reactive scaling, the LSTM based scaler had 40% fewer SLA violations, 72% less under-provisioned time and 5.8% lower cost. Compared to static provisioning it was 41% cheaper.
+Compared to reactive scaling, the LSTM based scaler had 47% fewer SLA violations, 63% less under-provisioned time, 9% lower average response time and 5.7% lower cost. Compared to the moving average scaler it had 48% fewer SLA violations at almost the same cost. Compared to static provisioning it was 41% cheaper.
 
 Forecast error on the test set (requests per 5 min):
 
