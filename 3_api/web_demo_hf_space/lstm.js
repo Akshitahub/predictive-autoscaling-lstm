@@ -1,5 +1,6 @@
-// LSTM prediction in JavaScript using the weights exported from Keras.
-// Model: LSTM(64) -> LSTM(32) -> Dense(16, relu) -> Dense(1)
+// LSTM prediction in JavaScript using the weights exported from Keras (model_weights.json).
+// Model: LSTM(64) -> Dense(16, relu) -> Dense(1). The layer list and window size come
+// from model_weights.json, so the same code also works for a stacked LSTM.
 // Gate order in Keras weights: input, forget, cell, output
 (function (root) {
   const sigmoid = (x) => 1 / (1 + Math.exp(-x));
@@ -29,17 +30,26 @@
   }
 
   function makeForecaster(d) {
-    const [l1, l2, d1, d2] = d.order.map((n) => d.layers[n]);
+    const types = d.types || d.order.map((n) => (n.startsWith('lstm') ? 'lstm' : 'dense'));
+    const layers = d.order.map((n) => d.layers[n]);
+    const lastLstm = types.lastIndexOf('lstm');
     const sMin = d.scaler.min[0], sScale = d.scaler.scale[0], win = d.window;
+    let nParams = d.n_params;
+    if (!nParams) {
+      const count = (a) => (Array.isArray(a) ? a.reduce((s, v) => s + count(v), 0) : 1);
+      nParams = count(layers);
+    }
     return {
       window: win,
+      nParams,
+      nLstm: types.filter((t) => t === 'lstm').length,
       predict(recent) {
-        const x = recent.slice(-win).map((v) => [v * sScale + sMin]);
-        let h = lstm(x, l1[0], l1[1], l1[2], true);
-        h = lstm(h, l2[0], l2[1], l2[2], false);
-        h = dense(h, d1[0], d1[1], true);
-        const y = dense(h, d2[0], d2[1], false)[0];
-        return Math.max(0, (y - sMin) / sScale);
+        let h = recent.slice(-win).map((v) => [v * sScale + sMin]);
+        layers.forEach((w, i) => {
+          if (types[i] === 'lstm') h = lstm(h, w[0], w[1], w[2], i < lastLstm);
+          else h = dense(h, w[0], w[1], i < layers.length - 1);
+        });
+        return Math.max(0, (h[0] - sMin) / sScale);
       },
     };
   }
