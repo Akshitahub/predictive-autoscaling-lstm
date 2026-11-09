@@ -1,0 +1,4 @@
+horizon_steps,horizon_min,Model MAE,Model RMSE,Model MAPE,Naive MAE,Naive RMSE,Naive MAPE,MovingAvg MAE,MovingAvg RMSE,MovingAvg MAPE,Model vs Naive (MAE % better)
+1,5,39.27,51.3,43.93,44.45,58.27,33.28,55.1,72.81,71.49,11.7
+3,15,44.55,58.07,60.69,53.75,70.86,57.27,58.33,76.85,74.99,17.1
+6,30,47.28,62.04,62.19,54.91,73.07,64.09,62.93,82.39,77.88,13.9

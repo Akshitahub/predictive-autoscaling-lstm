@@ -1,0 +1,4 @@
+model,kind,params,train_sec,Model MAE,Model RMSE,Model MAPE,Naive MAE,Naive RMSE,Naive MAPE,MovingAvg MAE,MovingAvg RMSE,MovingAvg MAPE
+1-layer LSTM,lstm1,17953,31.4,39.62,51.69,46.36,44.45,58.27,33.28,55.1,72.81,71.49
+2-layer LSTM,lstm2,29857,55.2,40.82,53.27,51.41,44.45,58.27,33.28,55.1,72.81,71.49
+2-layer GRU,gru,22817,40.0,39.27,51.3,43.93,44.45,58.27,33.28,55.1,72.81,71.49

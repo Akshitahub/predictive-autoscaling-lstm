@@ -1,0 +1,3 @@
+features,n_inputs,Model MAE,Model RMSE,Model MAPE,Naive MAE,Naive RMSE,Naive MAPE,MovingAvg MAE,MovingAvg RMSE,MovingAvg MAPE
+Requests only,1,40.82,53.27,51.41,44.45,58.27,33.28,55.1,72.81,71.49
+Requests + time features,5,41.98,55.12,63.64,44.45,58.27,33.28,55.1,72.81,71.49
