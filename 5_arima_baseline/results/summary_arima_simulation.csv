@@ -1,0 +1,2 @@
+policy,vm_hours,avg_vms,cost_usd,avg_response_s,p95_response_s,sla_violation_pct,underprovisioned_steps_pct
+PREDICTIVE_ARIMA,352.8,3.55,17.64,15.63,15.21,0.48,1.01
