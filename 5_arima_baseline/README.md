@@ -44,3 +44,4 @@ On this trace ARIMA forecast slightly better than the LSTM (1.7% lower MAE) and 
 - `arima_baseline.ipynb`: the notebook
 - `results/arima_metrics.csv`: forecasting error of the selected ARIMA model
 - `results/summary_arima_simulation.csv`: CloudSim Plus result for the ARIMA-driven policy
+- `results/predictions_arima.csv`: the ARIMA forecasts used in the simulation (same format as `2_cloudsim_simulation/predictions.csv`, ARIMA in the `lstm_pred` column)
